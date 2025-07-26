@@ -41,6 +41,7 @@ Deploying a Telegram bot on a server requires using webhooks rather than polling
    python main.py
    ```
 
+
 ## Deployment on Render or Railway
 
 1. Push this repository to your GitHub account.
@@ -49,20 +50,7 @@ Deploying a Telegram bot on a server requires using webhooks rather than polling
    * **Build Command**: `pip install -r requirements.txt`
    * **Start Command**: `python main.py`
    * **Environment Variables**: set `BOT_TOKEN`, `BASE_WEBHOOK_URL` (your Render domain), `WEBHOOK_PATH` (e.g. `/webhook`), and `WEBHOOK_SECRET`.
-3. For Render, you don’t need to specify a port; use the `$PORT` environment variable automatically provided by the platform.  The script will register the webhook on startup.
-
-## Demonstration idea (≤2 min)
-
-1. Record a video showing how you create a new service on Render, set environment variables and deploy the bot.
-2. Use ngrok or Render’s public URL to send a `/start` message to your bot and observe the echo reply.
-3. Highlight how quickly the bot is online once the webhook is registered.
-
-## Opportunities for improvement
-
-* **Custom handlers** – add command handlers, inline keyboards, middleware, etc.
-* **Persistent storage** – integrate with a database (e.g. PostgreSQL) for storing user data.
-* **API token rotation** – implement secret rotation for enhanced security.
-* **Multiple bots** – use `TokenBasedRequestHandler` from aiogram to host multiple bots on a single service.
+3. For Render, you don’t need to specify a port; use the `$PORT` environment variable automatically provided by the platform.  The script will register the web
 
 ## Helpful note on webhooks
 
