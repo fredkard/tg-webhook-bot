@@ -48,7 +48,7 @@ async def on_shutdown(bot: Bot) -> None:
 
 async def handle_message(message: types.Message) -> None:
     """Echo handler that replies with the same text."""
-    await message.reply(f"Вы написали: {message.text}")
+    await message.reply(f"Вы написали: {message.chat_id}")
 
 
 async def main() -> None:
