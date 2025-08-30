@@ -52,7 +52,7 @@ async def handle_message(message: types.Message) -> None:
     chat_id = message.chat.id
     username = message.from_user.username or "N/A"
 
-    reply_text = (
+    reply_lines = (
         f"Hello {first_name},\n"
         f"Chat ID: {chat_id}\n"
         f"Username: {username}"
