@@ -55,19 +55,18 @@ async def handle_message(message: types.Message) -> None:
     reply_lines = (
         f"Hello {first_name},\n"
         f"Chat ID: {chat_id}\n"
-        f"Username: {username}"
+        f"Username: {username}\n"
     )
 
     # Check if message is from a group or supergroup
     if message.chat.type in ["group", "supergroup"]:
-        reply_lines.append(f"Group Chat ID: {message.chat.id}")
+        reply_lines.append(f"Group Chat ID: {message.chat.id}\n")
 
     # Check if message is forwarded from a channel
     if message.forward_from_chat and message.forward_from_chat.type == "channel":
-        reply_lines.append(f"Forwarded from Channel ID: {message.forward_from_chat.id}")
+        reply_lines.append(f"Forwarded from Channel ID: {message.forward_from_chat.id}\n")
 
-    reply_text = "\n".join(reply_lines)
-    await message.reply(reply_text)
+    await message.reply(reply_lines)
 
 async def main() -> None:
     # Load configuration from environment
