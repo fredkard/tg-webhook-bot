@@ -47,8 +47,18 @@ async def on_shutdown(bot: Bot) -> None:
 
 
 async def handle_message(message: types.Message) -> None:
-    """Echo handler that replies with the same text."""
-    await message.reply(f"Вы написали: {message.chat_id}")
+    """Personalized reply with user details."""
+    first_name = message.from_user.first_name or "there"
+    chat_id = message.chat.id
+    username = message.from_user.username or "N/A"
+
+    reply_text = (
+        f"Hello {first_name},\n"
+        f"Chat ID: {chat_id}\n"
+        f"Username: {username}"
+    )
+
+    await message.reply(reply_text)
 
 
 async def main() -> None:
